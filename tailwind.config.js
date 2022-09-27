@@ -10,7 +10,9 @@ module.exports = {
         colors: {
             primary: colors.indigo,
             secondary: colors.yellow,
+            error: colors.red,
             neutral: colors.gray,
+            white: colors.white,
         },
 
         borderRadius: {

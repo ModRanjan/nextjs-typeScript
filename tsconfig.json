@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": "./",
         "paths": {
-            "@/Atom/*": ["components/Atoms/*"],
+            "@/Atoms/*": ["components/Atoms/*"],
             "@/Molecules/*": ["components/Molecules/*"],
             "@/Organisms/*": ["components/Organisms/*"],
-            "@/utils/*": ["utils/*"]
+            "@/utils/*": ["utils/*"],
+            "@/redux/*": ["redux/*"]
         },
 
         "target": "es5",
