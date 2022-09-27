@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '@/Organisms/Header';
 import { MenuBar } from '@/Molecules/MenuBar';
@@ -10,46 +11,49 @@ import SectionSeparator from '@/Atoms/SectionSeprator';
 type LayoutProps = React.PropsWithChildren<{
     title: string;
     description?: string;
-    preview?: boolean;
 }>;
 
-const Layout: React.FC<LayoutProps> = ({
+const Layout = ({
     children,
     title = 'Boilerplate',
     description = 'nextjs+typeScript boilerplate',
-    preview = true,
-}) => {
+}: LayoutProps) => {
+    const [render, setRender] = useState(false);
+    useEffect(() => setRender(true), []);
+
     return (
-        <div className="box-border mx-auto">
-            <Head>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+        render && (
+            <div className="box-border mx-auto">
+                <Head>
+                    <title>{title}</title>
+                    <meta name="description" content={description} />
+                    <link rel="icon" href="/favicon.ico" />
+                </Head>
 
-            <div className="min-h-screen bg-primary-50 my-font">
-                <Header />
+                <div className="min-h-screen bg-primary-50 my-font">
+                    <Header />
 
-                <div className="hidden md:block">
-                    <MenuBar />
+                    <div className="hidden md:block">
+                        <MenuBar />
+                    </div>
+                    <SectionSeparator />
+
+                    {children}
+                    <Footer />
                 </div>
-                <SectionSeparator />
 
-                {children}
-                <Footer />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                />
             </div>
-
-            <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-            />
-        </div>
+        )
     );
 };
 

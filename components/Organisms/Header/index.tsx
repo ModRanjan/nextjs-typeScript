@@ -86,30 +86,10 @@ const Index: React.FC = () => {
         dispatch(setChainData(data));
     };
 
-    if (
-        typeof window === 'undefined' ||
-        typeof (window as any).ethereum === 'undefined'
-    ) {
-        return (
-            <Alert preview={true}>
-                <div>
-                    MetaMask Extension Not Found !
-                    <a
-                        href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en"
-                        target="_blank"
-                        className="ml-1 font-bold "
-                        rel="noreferrer">
-                        Click here to Install MetaMask
-                    </a>
-                </div>
-            </Alert>
-        );
-    }
-
     return (
         <>
             <div className="sticky top-0 bg-white">
-                {/* {typeof window.ethereum === 'undefined' ? (
+                {typeof window.ethereum === 'undefined' ? (
                     <Alert preview={true}>
                         <div>
                             MetaMask Extension Not Found !
@@ -122,7 +102,7 @@ const Index: React.FC = () => {
                             </a>
                         </div>
                     </Alert>
-                ) : null} */}
+                ) : null}
 
                 <div className="container flex items-center justify-between px-2 py-1 mx-auto">
                     <div className="ml-2">
