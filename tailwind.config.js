@@ -4,6 +4,7 @@ module.exports = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx}',
         './components/**/*.{js,ts,jsx,tsx}',
+        './utils/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
         colors: {
@@ -21,11 +22,7 @@ module.exports = {
             lg: '.5rem',
             full: '9999px',
         },
-        extend: {
-            rotate: {
-                9: '9deg',
-            },
-        },
+        extend: {},
     },
     plugins: [],
 };

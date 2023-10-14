@@ -1,16 +1,12 @@
 import type { NextPage } from 'next';
 import { default as HomePage } from '@/Organisms/Home';
-import { Label } from '@/Atoms/Label';
+import { CONTAINER } from '@/utils/index';
 
 const Home: NextPage = () => {
     return (
-        <div>
-            <Label className="pt-8 text-3xl font-bold text-center">
-                Web3 Boilerplate with typeScript
-            </Label>
-
+        <section className={CONTAINER}>
             <HomePage />
-        </div>
+        </section>
     );
 };
 

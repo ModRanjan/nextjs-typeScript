@@ -9,7 +9,7 @@ type MenuProps = {
 const Index: React.FC<MenuProps> = ({ openMenu, setOpenMenu }) => {
     return (
         <button
-            className="mr-4 text-3xl rounded-lg md:hidden"
+            className="mr-4 text-3xl border-2 rounded border-primary-300 md:hidden"
             onClick={() => setOpenMenu(!openMenu)}>
             {openMenu ? <ImCross /> : <BiMenu />}
         </button>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Image } from '@/Atoms/Image';
 import Button from '@/Atoms/Button';
 

@@ -7,7 +7,7 @@ import store from '../redux/store';
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <Provider store={store}>
-            <Layout title="simple lender">
+            <Layout title="typescript boilerplate">
                 <Component {...pageProps} />
             </Layout>
         </Provider>

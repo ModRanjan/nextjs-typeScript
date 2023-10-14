@@ -1,8 +1,9 @@
 import { DropdownListItem } from '@/Atoms/DropdownListItem';
+import { IChainData } from '../../../redux/reducer/data.type';
 
 type PropsType = {
-    dropdownItems: any[];
-    onClickDropdownItem: (data: any) => void;
+    dropdownItems: IChainData[];
+    onClickDropdownItem: (data: IChainData | any) => void;
 };
 
 export const NetworksDropdown: React.FC<PropsType> = ({
@@ -10,9 +11,9 @@ export const NetworksDropdown: React.FC<PropsType> = ({
     onClickDropdownItem,
 }) => {
     return (
-        <div className="w-full rounded-lg bg-primary-50 md:w-80">
-            <p className="py-1.5 pl-4 text-neutral-500">Select a network</p>
-            <ul className="flex flex-col flex-1 grow">
+        <div className="fixed right-0 z-20 flex items-center justify-center w-full p-2 bg-white rounded-lg md:right-20 md:w-80">
+            <ul className="flex flex-col w-full grow">
+                <li className="pb-2 pl-6 text-neutral-500">Select a network</li>
                 {dropdownItems.map((data, index) => {
                     return (
                         <li key={index}>
