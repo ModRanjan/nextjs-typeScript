@@ -1,6 +1,11 @@
 import { Image } from '@/Atoms/Image';
 
-const NoRecord: React.FC = () => {
+type NoRecordProps = {
+    header: string;
+    subHeader: string;
+};
+
+const NoRecord: React.FC<NoRecordProps> = ({ header, subHeader }) => {
     return (
         <div className="p-5 bg-white ">
             <div className="flex items-center justify-center">
@@ -10,12 +15,8 @@ const NoRecord: React.FC = () => {
                     alt="Empty"
                 />
             </div>
-            <h1 className="text-2xl text-center text-neutral-700">
-                No Locked Tokens
-            </h1>
-            <h3 className="text-center text-neutral-500">
-                You have not locked up any tokens yet.
-            </h3>
+            <h1 className="text-2xl text-center text-neutral-700">{header}</h1>
+            <h3 className="text-center text-neutral-500">{subHeader}</h3>
         </div>
     );
 };

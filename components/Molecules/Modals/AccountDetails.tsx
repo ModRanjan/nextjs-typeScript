@@ -24,23 +24,28 @@ const AccountDetails: React.FC<PropsType> = ({
             handleCloseModal={handleCloseModal}
             label="Account">
             <div className="space-y-2">
-                <div className="p-4 border-2 border-gray-300 rounded-lg md:space-y-3">
-                    <p className="text-base text-gray-500">
-                        connected with metamask{' '}
+                <div className="p-4 border border-gray-300 rounded-lg md:space-y-4">
+                    <p className="text-xl text-gray-500">
+                        connected with metamask
                     </p>
-                    <div className="flex flex-wrap items-center">
+
+                    <div className="flex flex-wrap items-center gap-2">
                         <Image
-                            className="h-12"
+                            className="h-16 rounded-full"
                             src={'/images/accountLogo.png'}
                             alt="logo"
                         />
-                        <p title={currentAccount} className="px-2 text-xl ">
-                            {currentAccount.slice(0, 5) +
-                                '...' +
-                                currentAccount.slice(38, 42)}
+
+                        <p
+                            title={currentAccount}
+                            className="text-xl whitespace-nowrap">
+                            {currentAccount.slice(0, 7) +
+                                ' ... ' +
+                                currentAccount.slice(30, 42)}
                         </p>
                     </div>
-                    <div className="flex space-x-5 text-gray-500">
+
+                    <div className="flex text-neutral-500 gap-x-5">
                         <CopyToClipboard text={currentAccount}>
                             <button
                                 onClick={() =>
@@ -48,7 +53,7 @@ const AccountDetails: React.FC<PropsType> = ({
                                         autoClose: 50,
                                     })
                                 }
-                                className="flex items-center space-x-1 text-sm cursor-pointer">
+                                className="flex items-center gap-2 text-base cursor-pointer hover:text-neutral-800">
                                 <FiCopy />
                                 <span> copy Address</span>
                             </button>
@@ -57,17 +62,18 @@ const AccountDetails: React.FC<PropsType> = ({
                         <a
                             href={`${etherscan}${currentAccount}`}
                             target="_blank"
-                            className="flex items-center space-x-1 text-sm cursor-pointer"
+                            className="flex items-center gap-2 text-base cursor-pointer whitespace-nowrap hover:text-primary-800"
                             rel="noreferrer">
                             <BsBoxArrowUpRight />
                             <span>view on Etherscan</span>
                         </a>
                     </div>
                 </div>
-                <div className="flex flex-wrap justify-center space-x-3">
+
+                <div className="flex justify-center">
                     <button
                         onClick={handleCloseModal}
-                        className="   py-1.5 px-5 bg-indigo-500  text-white rounded-xl  cursor-pointer">
+                        className="py-1.5 px-5 bg-primary-500 text-white rounded-lg cursor-pointer">
                         Back
                     </button>
                 </div>

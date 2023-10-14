@@ -14,23 +14,21 @@ export const Modal: React.FC<ModalProps> = ({
     handleCloseModal,
 }) => {
     return (
-        <div>
-            <ReactModal
-                isOpen={open}
-                onRequestClose={handleCloseModal}
-                contentLabel="Wallet Details"
-                className="p-5 mx-auto mt-20 space-y-2 bg-white shadow-2xl md:w-2/5 rounded-2xl shadow-primary-600">
-                <div className="flex justify-between text-xl ">
-                    <h3 className="inline "> {label} </h3>
-                    <div className="float-right">
-                        <button onClick={handleCloseModal}>
-                            <GiCancel />
-                        </button>
-                    </div>
+        <ReactModal
+            isOpen={open}
+            onRequestClose={handleCloseModal}
+            contentLabel="Wallet Details"
+            className="p-5 mx-auto mt-20 space-y-2 border-none rounded-lg shadow-lg bg-primary-50 md:w-2/5 shadow-primary-300">
+            <div className="flex justify-between text-xl">
+                <h3 className="inline-block"> {label} </h3>
+                <div className="float-right">
+                    <button onClick={handleCloseModal}>
+                        <GiCancel />
+                    </button>
                 </div>
+            </div>
 
-                {children}
-            </ReactModal>
-        </div>
+            {children}
+        </ReactModal>
     );
 };

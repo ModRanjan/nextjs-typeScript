@@ -1,4 +1,3 @@
-import SectionSeparator from '@/Atoms/SectionSeprator';
 import Link from 'next/link';
 import Logo from '@/Molecules/Logo';
 
